@@ -1,0 +1,147 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+
+  line-height: 1.5;
+}
+
+/* GENERAL */
+
+.container {
+  width: 1200px;
+  margin: auto;
+}
+
+.grey {
+  background-color: #f2f4f4;
+  padding-top: 30px;
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: 700;
+  color: #2e3333;
+
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-size: 21px;
+  font-weight: 700;
+  color: #2e3333;
+
+  margin-bottom: 25px;
+}
+
+h3 {
+  font-size: 16px;
+  color: #2e3333;
+  margin-bottom: 10px;
+}
+
+/* HEADER */
+
+header {
+  height: 60px;
+  padding: 10px 0px 5px 0px;
+
+  margin-bottom: 30px;
+  border-bottom: solid 1px lightgray;
+}
+
+header > img {
+  height: 40px;
+  margin-left: 50px;
+}
+
+/* RESTAURANT */
+
+.restaurant {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+
+  margin-bottom: 30px;
+}
+
+.left-bloc {
+  flex: 3;
+
+  font-size: 18px;
+  font-weight: 400;
+
+  color: #868a99;
+}
+
+.right-bloc {
+  flex: 1;
+}
+
+.right-bloc > img {
+  height: 200px;
+  border-radius: 5px;
+}
+
+/* PRODUCTS */
+
+.left-container {
+  width: 840px;
+  padding-right: 30px;
+  margin-bottom: 20px;
+
+  display: flex;
+
+  flex-wrap: wrap;
+  justify-content: space-between; /* Répartit uniformément les éléments */
+  align-items: flex-start; /* Aligne les éléments en haut */
+
+  /* border: solid 2px green; */ /* Controle du bloc */
+}
+
+.meals {
+  display: flex;
+  flex: 1 1 calc(50% - 10px); /* Chaque div occupe 50% de la largeur disponible moins l'espace */
+  max-width: calc(50% - 10px); /* Empêche de dépasser 50% */
+  height: 160px;
+
+  margin-bottom: 20px; /* Espacement entre les lignes */
+
+  padding: 15px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.meals > img {
+  width: 130px;
+  height: 130px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.meal-description {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding-right: 10px;
+}
+
+.meal-description > p {
+  font-size: 13px;
+  font-weight: 300;
+  color: #868a99;
+  margin-bottom: 10px;
+}
+
+.price {
+  font-size: 18px;
+  font-weight: 400;
+  color: #868a99;
+}
