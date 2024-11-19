@@ -16,6 +16,7 @@ import axios from "axios";
 import Header from "./components/Header";
 import Restaurant from "./components/Restaurant";
 import Products from "./components/Products";
+import Basket from "./components/Basket";
 
 //! Hooks import
 import { useState, useEffect } from "react";
@@ -25,7 +26,7 @@ import { useState, useEffect } from "react";
 function App() {
   //
   //States
-  const [data, setData] = useState();
+  const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
   //useEffect hook to recover data from backend with Axios
@@ -39,7 +40,7 @@ function App() {
           "https://site--backend-deliveroo--zs7p5ywqkq9f.code.run/"
         );
 
-        //Response stocked in data state
+        //Response.data stocked in data state
         setData(response.data);
 
         //isLoading => false
@@ -72,10 +73,17 @@ function App() {
             ></Restaurant>{" "}
           </div>
 
+          {/* MAIN */}
           <div className="grey">
-            {/* PRODUCTS */}
-            <div className="container">
-              <Products categories={data.categories}></Products>
+            <div className="container main-bloc">
+              {/* PRODUCTS */}
+              <div className="left-main">
+                <Products categories={data.categories}></Products>
+              </div>
+              {/* BASKET */}
+              <div className="right-main">
+                <Basket></Basket>
+              </div>
             </div>
           </div>
         </>

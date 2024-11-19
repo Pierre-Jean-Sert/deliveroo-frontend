@@ -70,16 +70,16 @@ header > img {
 }
 
 .left-bloc {
-  flex: 3;
+  flex: 1;
 
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 400;
 
   color: #868a99;
 }
 
 .right-bloc {
-  flex: 1;
+  width: 350px;
 }
 
 .right-bloc > img {
@@ -87,20 +87,38 @@ header > img {
   border-radius: 5px;
 }
 
+/* MAIN */
+
+.main-bloc {
+  display: flex;
+  gap: 30px;
+
+  /* border: solid 2px blue; */
+}
+
+.left-main {
+  flex: 1;
+
+  /* border: solid 2px red; */
+}
+
+.right-main {
+  width: 350px;
+
+  /* border: solid 2px purple; */
+}
+
 /* PRODUCTS */
 
 .left-container {
-  width: 840px;
-  padding-right: 30px;
   margin-bottom: 20px;
 
   display: flex;
 
   flex-wrap: wrap;
   justify-content: space-between; /* Répartit uniformément les éléments */
-  align-items: flex-start; /* Aligne les éléments en haut */
 
-  /* border: solid 2px green; */ /* Controle du bloc */
+  /* border: solid 2px green; Controle du bloc */
 }
 
 .meals {
@@ -114,6 +132,24 @@ header > img {
   padding: 15px;
   border-radius: 5px;
   background-color: white;
+
+  cursor: pointer;
+}
+
+.meals:hover {
+  background: #a1ffce; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #faffd1,
+    #a1ffce
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #faffd1,
+    #a1ffce
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .meals > img {
@@ -144,4 +180,21 @@ header > img {
   font-size: 18px;
   font-weight: 400;
   color: #868a99;
+
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.popular {
+  color: #ff8000;
+  font-size: 14px;
+}
+
+/* BASKET */
+
+.basket {
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px;
 }

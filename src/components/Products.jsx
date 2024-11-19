@@ -40,33 +40,41 @@ function Products({ categories }) {
       return (
         <>
           {/* Meal list */}
-          <h2>{elem.name}</h2>
 
-          <section className="left-container">
-            {elem.meals.map((meals) => {
-              return (
-                <>
-                  <article className="meals">
-                    <div className="meal-description">
-                      <h3>{meals.title}</h3>
+          <section key={elem.name}>
+            <h2>{elem.name}</h2>
 
-                      {/* Description */}
-                      {description(meals.description)}
+            <div className="left-container">
+              {elem.meals.map((meals) => {
+                return (
+                  <>
+                    <article key={meals.title} className="meals">
+                      <div className="meal-description">
+                        <h3>{meals.title}</h3>
 
-                      {/* Price and popular */}
-                      <div className="price">
-                        <span>{meals.price} €</span>
-                        <span></span>
+                        {/* Description => use description function*/}
+                        {description(meals.description)}
+
+                        {/* Price and popular */}
+                        <div className="price">
+                          <span>{meals.price} €</span>
+
+                          {meals.popular && (
+                            <span className="popular">
+                              <i className="fa-solid fa-star"></i> Populaire
+                            </span>
+                          )}
+                        </div>
                       </div>
-                    </div>
 
-                    {meals.picture && (
-                      <img src={meals.picture} alt="Meal picture" />
-                    )}
-                  </article>
-                </>
-              );
-            })}
+                      {meals.picture && (
+                        <img src={meals.picture} alt="Meal picture" />
+                      )}
+                    </article>
+                  </>
+                );
+              })}
+            </div>
           </section>
         </>
       );
