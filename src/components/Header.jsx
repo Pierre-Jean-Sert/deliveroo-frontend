@@ -10,7 +10,7 @@ function Header() {
   return (
     <>
       <header>
-        <img src="/src/assets/deliveroo-logo.png" alt="Deliveroo logo" />
+        <img src="./src/assets/deliveroo-logo.png" alt="Deliveroo logo" />
       </header>
     </>
   );
