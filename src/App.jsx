@@ -28,6 +28,7 @@ function App() {
   //States
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+  const [basket, setBasket] = useState([]);
 
   //useEffect hook to recover data from backend with Axios
   useEffect(() => {
@@ -78,11 +79,15 @@ function App() {
             <div className="container main-bloc">
               {/* PRODUCTS */}
               <div className="left-main">
-                <Products categories={data.categories}></Products>
+                <Products
+                  categories={data.categories}
+                  basket={basket}
+                  setBasket={setBasket}
+                ></Products>
               </div>
               {/* BASKET */}
               <div className="right-main">
-                <Basket></Basket>
+                <Basket basket={basket} setBasket={setBasket}></Basket>
               </div>
             </div>
           </div>

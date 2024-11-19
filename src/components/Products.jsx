@@ -6,33 +6,8 @@
 
 */
 
-function Products({ categories }) {
+function Products({ categories, basket, setBasket }) {
   //
-  //*Sub-function description
-  function description(description) {
-    if (description) {
-      //Check description lenght <60
-      if (description.length < 60) {
-        return (
-          <>
-            <p>{description}</p>
-          </>
-        );
-
-        //Else, limit description lenght to 60 letters without cut words
-      } else {
-        return (
-          <>
-            <p>
-              {description.slice(0, description.lastIndexOf(" ", 60)) + " ..."}
-            </p>
-          </>
-        );
-      }
-    }
-
-    return description;
-  }
 
   return categories.map((elem) => {
     //If meal !== empty
@@ -40,7 +15,6 @@ function Products({ categories }) {
       return (
         <>
           {/* Meal list */}
-
           <section key={elem.name}>
             <h2>{elem.name}</h2>
 
@@ -48,12 +22,40 @@ function Products({ categories }) {
               {elem.meals.map((meals) => {
                 return (
                   <>
-                    <article key={meals.title} className="meals">
+                    <article
+                      key={meals.id}
+                      className="meals"
+                      //  Onclick
+                      onClick={() => {
+                        for (let i = 0; i <= basket.length; i++) {
+                          // Basket update if meal already in basket and basket is not empty
+                          if (basket.length > 0 && basket[i].id === meals.id) {
+                            const newTab = [...basket];
+                            newTab[i].counter = basket[i].counter + 1;
+                            setBasket(newTab);
+                          }
+
+                          // Basket update if new meal in basket
+                          else {
+                            const newTab = [...basket];
+                            newTab.push({
+                              id: meals.id,
+                              title: meals.title,
+                              price: Number(meals.price),
+                              counter: 1,
+                            });
+                            setBasket(newTab);
+                          }
+                        }
+
+                        console.log("basket", basket);
+                      }}
+                    >
                       <div className="meal-description">
                         <h3>{meals.title}</h3>
 
-                        {/* Description => use description function*/}
-                        {description(meals.description)}
+                        {/* Description */}
+                        <p>{meals.description}</p>
 
                         {/* Price and popular */}
                         <div className="price">
