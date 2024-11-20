@@ -28,7 +28,7 @@ function Products({ categories, basket, setBasket }) {
                       //  Onclick
                       onClick={() => {
                         for (let i = 0; i <= basket.length; i++) {
-                          // Basket update if meal already in basket and basket is not empty
+                          // Basket update if basket is not empty and meal already in basket
                           if (basket.length > 0 && basket[i].id === meals.id) {
                             const newTab = [...basket];
                             newTab[i].counter = basket[i].counter + 1;
