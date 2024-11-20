@@ -29,21 +29,24 @@ function Basket({ basket, setBasket }) {
                 <div className="counter">
                   {/* Delete a meal */}
                   <button
+                    key={elem.id}
                     onClick={() => {
+                      const newTab = [...basket];
                       for (let i = 0; i < basket.length; i++) {
-                        // Basket update if counter >0
-                        if (basket[i].id === elem.id && elem.counter > 1) {
-                          const newTab = [...basket];
-                          newTab[i].counter = basket[i].counter - 1;
-                          setBasket(newTab);
+                        // Basket update if ids are equal
+                        if (newTab[i].id === elem.id) {
+                          // Basket update if counter >0
+                          if (newTab[i].counter > 1) {
+                            newTab[i].counter = newTab[i].counter - 1;
+                            console.log("je suis dans le if");
+                          }
+                          // Basket update if counter =0
+                          else {
+                            newTab.splice(i, 1);
+                            console.log("je suis dans le else");
+                          }
                         }
-
-                        // Basket update if counter =0
-                        else {
-                          const newTab = [...basket];
-                          newTab.splice(i, 1);
-                          setBasket(newTab);
-                        }
+                        setBasket(newTab);
                       }
                     }}
                   >
