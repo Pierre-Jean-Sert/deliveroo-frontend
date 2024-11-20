@@ -14,7 +14,15 @@ function Basket({ basket, setBasket }) {
   return (
     <>
       <section className="basket">
-        <div className="basket-button">Valider mon panier</div>
+        <div
+          className={
+            basket.length === 0
+              ? "basket-button basket-button-off"
+              : "basket-button "
+          }
+        >
+          Valider mon panier
+        </div>
 
         {/* Meals list */}
         {basket.map((elem) => {

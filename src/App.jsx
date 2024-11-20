@@ -17,6 +17,7 @@ import Header from "./components/Header";
 import Restaurant from "./components/Restaurant";
 import Products from "./components/Products";
 import Basket from "./components/Basket";
+import Footer from "./components/Footer";
 
 //! Hooks import
 import { useState, useEffect } from "react";
@@ -91,6 +92,9 @@ function App() {
               </div>
             </div>
           </div>
+
+          {/* FOOTER */}
+          <Footer></Footer>
         </>
       )}
     </>

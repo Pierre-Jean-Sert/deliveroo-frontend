@@ -59,6 +59,19 @@ header > img {
   margin-left: 50px;
 }
 
+/* FOOTER */
+
+footer {
+  margin: 20px 0px 20px 0px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.bold {
+  color: #5c48d3;
+  font-weight: 700;
+}
+
 /* RESTAURANT */
 
 .restaurant {
@@ -123,12 +136,13 @@ header > img {
 
 .meals {
   display: flex;
+  justify-content: space-between;
   flex: 1 1 calc(50% - 10px); /* Chaque div occupe 50% de la largeur disponible moins l'espace */
   max-width: calc(50% - 10px); /* Empêche de dépasser 50% */
+
   height: 160px;
 
   margin-bottom: 20px; /* Espacement entre les lignes */
-
   padding: 15px;
   border-radius: 5px;
   background-color: white;
@@ -204,6 +218,12 @@ header > img {
   margin-bottom: 20px;
 }
 
+.basket-button-off {
+  background-color: #bac3c3;
+  color: #8b9a9b;
+  cursor: not-allowed;
+}
+
 .basket-list {
   font-size: 15px;
   font-weight: 400;
@@ -211,8 +231,10 @@ header > img {
 
   display: flex;
   justify-content: space-between;
-  gap: 8px;
+  gap: 10px;
   margin-bottom: 20px;
+
+  text-align: center;
 }
 
 .sub-total {
